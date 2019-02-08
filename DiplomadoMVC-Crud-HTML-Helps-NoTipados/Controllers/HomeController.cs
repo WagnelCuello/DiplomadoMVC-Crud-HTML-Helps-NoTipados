@@ -20,6 +20,7 @@ namespace DiplomadoMVC_Crud_HTML_Helps_NoTipados.Controllers
             return View();
         }
 
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
