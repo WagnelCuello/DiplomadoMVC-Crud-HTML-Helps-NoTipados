@@ -1,9 +1,13 @@
 ﻿@model DiplomadoMVC_Crud_HTML_Helps_NoTipados.Models.Productos
+@{
+    ViewBag.Title = "ModificacionProducto";
+    @Layout = null;
+}
 
-<!DOCTYPE html>
-<html>
+<h2>ModificacionProducto</h2>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta name="viewport" content="width=devide-width"/>
     <title>Datos Articulo</title>
 </head>
 <body>
@@ -11,17 +15,17 @@
         @using (Html.BeginForm("ModificacionProducto","Home", FormMethod.Post))
         {
             <p>
-                Codigo de producto:
-                @Html.DisplayFor(model => model.Codigo)
-                @Html.HiddenFor(model => model.Codigo)
+                Codigo producto:
+                @Html.Display("Codigo")
+                @Html.Hidden("Codigo")
             </p>
             <p>
                 Descripcion:
-                @Html.DisplayFor(model => model.Descripcion)
+                @Html.TextBox("Descripcion")
             </p>
             <p>
                 Precio:
-                @Html.DisplayFor(model => model.Precio)
+                @Html.TextBox("Precio")
             </p>
             <p>
                 <input type="submit" name="Confirmar" value="Confirmar" />

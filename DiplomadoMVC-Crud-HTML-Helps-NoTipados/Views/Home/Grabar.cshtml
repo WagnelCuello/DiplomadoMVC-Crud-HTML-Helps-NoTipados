@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Grabar";
+}
+
+<h2>Grabar</h2>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        @{ Html.BeginForm(); }
+        <p>
+            Buscar por Codigo:
+            @Html.TextBox("Codigo");
+        </p>
+        <p>
+            <input type="submit" value="Buscar" />
+        </p>
+        @{  Html.EndForm(); }
+    </div>
+    <a href="/Home/Grabar">Agregar</a>
+</body>
+</html>
