@@ -1,32 +1,20 @@
-﻿@model DiplomadoMVC_Crud_HTML_Helps_NoTipados.Models.Productos
-
-<!DOCTYPE html>
-<html>
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta name="viewport" content="width=devide-width"/>
-    <title>Datos Articulo</title>
+    <title></title>
 </head>
 <body>
     <div>
-        @using (Html.BeginForm("ModificacionProducto","Home", FormMethod.Post))
-        {
-            <p>
-                Codigo de producto:
-                @Html.DisplayFor(model => model.Codigo)
-                @Html.HiddenFor(model => model.Codigo)
-            </p>
-            <p>
-                Descripcion:
-                @Html.DisplayFor(model => model.Descripcion)
-            </p>
-            <p>
-                Precio:
-                @Html.DisplayFor(model => model.Precio)
-            </p>
-            <p>
-                <input type="submit" name="Confirmar" value="Confirmar" />
-            </p>
-        }
+        @{ Html.BeginForm(); }
+        <br />
+        <p>
+            Buscar por Codigo:
+            @Html.TextBox("Codigo");
+        </p>
+        <p>
+            <input type="submit" value="Buscar" />
+        </p>
+        @{ Html.EndForm(); }
     </div>
+    <a href="/Home/Grabar">Agregar</a>
 </body>
 </html>

@@ -18,6 +18,17 @@ namespace DiplomadoMVC_Crud_HTML_Helps_NoTipados.Controllers
         public ActionResult Index(FormCollection coleccion)
         {
             MantenimientoProducto mp = new MantenimientoProducto();
+            Productos prod = mp.Recuperar(int.Parse(coleccion["codigo"].ToString()));
+            if (prod != null)
+                return View("ModificacionProducto",prod);
+            else
+                return View("ProductoNoExistente");
+        }
+
+        [HttpPost]
+        public ActionResult ModificarProducto(FormCollection coleccion)
+        {
+            MantenimientoProducto mp = new MantenimientoProducto();
             Productos prod = new Productos
             {
                 Codigo = int.Parse(coleccion["Codigo"].ToString()),

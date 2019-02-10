@@ -5,22 +5,35 @@
 
 <h2>Grabar</h2>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+@model DiplomadoMVC_Crud_HTML_Helps_NoTipados.Models.Productos
+
+<!DOCTYPE html>
+<html>
 <head>
-    <title></title>
+    <meta name="viewport" content="width=devide-width" />
+    <title>Datos Articulo</title>
 </head>
 <body>
     <div>
-        @{ Html.BeginForm(); }
-        <p>
-            Buscar por Codigo:
-            @Html.TextBox("Codigo");
-        </p>
-        <p>
-            <input type="submit" value="Buscar" />
-        </p>
-        @{  Html.EndForm(); }
+        @using (Html.BeginForm("Grabar", "Home", FormMethod.Post))
+        {
+            <p>
+                Codigo de producto:
+                @Html.DisplayFor(model => model.Codigo)
+                @Html.HiddenFor(model => model.Codigo)
+            </p>
+            <p>
+                Descripcion:
+                @Html.TextBoxFor(model => model.Descripcion)
+            </p>
+            <p>
+                Precio:
+                @Html.TextBoxFor(model => model.Precio)
+            </p>
+            <p>
+                <input type="submit" name="Confirmar" value="Confirmar" />
+            </p>
+        }
     </div>
-    <a href="/Home/Grabar">Agregar</a>
 </body>
 </html>
